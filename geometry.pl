@@ -9,3 +9,8 @@ lineFromTwoPoints(A, B, L) :-
   A =\= B,
   sub(B, A, V),
   L = line(A, V).
+
+isOnLine(line(PX-PY-PZ, VX-VY-VZ), QX-QY-QZ) :-
+  (VX =:= 0 -> PX = QX; T is (PX - QX) / VX),
+  (VY =:= 0 -> PY = QY; T is (PY - QY) / VY),
+  (VZ =:= 0 -> PZ = QZ; T is (PZ - QZ) / VZ).
